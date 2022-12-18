@@ -1,0 +1,16 @@
+Removed Pin From Net: NetName=GND Pin=U6-1
+Removed Pin From Net: NetName=NetR44_1 Pin=U6-2
+Removed Pin From Net: NetName=GND Pin=U6-3
+Removed Pin From Net: NetName=PB10 Pin=U6-4
+Removed Pin From Net: NetName=PC3 Pin=U6-5
+Removed Pin From Net: NetName=3V Pin=U6-6
+Removed Pin From Net: NetName=3V Pin=U6-6
+Removed Member From Class: ClassName=U_AUDIO Member=U6
+Added Component: Designator=U?(MP45DT02TR)
+Added Pin To Net: NetName=GND Pin=U?-1
+Added Pin To Net: NetName=NetR44_1 Pin=U?-2
+Added Pin To Net: NetName=GND Pin=U?-3
+Added Pin To Net: NetName=PB10 Pin=U?-4
+Added Pin To Net: NetName=PC3 Pin=U?-5
+Added Pin To Net: NetName=3V Pin=U?-6
+Added Member To Class: ClassName=U_AUDIO Member=Component U? MP45DT02TR-M

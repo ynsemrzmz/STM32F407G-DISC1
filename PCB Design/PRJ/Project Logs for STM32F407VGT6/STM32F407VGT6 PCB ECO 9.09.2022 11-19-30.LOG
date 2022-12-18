@@ -1,0 +1,26 @@
+Added Pin To Net: NetName=3V Pin=B1-1
+Added Pin To Net: NetName=3V Pin=B1-2
+Added Pin To Net: NetName=3V Pin=C9-2
+Added Pin To Net: NetName=3V Pin=C10-2
+Added Pin To Net: NetName=3V Pin=C11-2
+Added Pin To Net: NetName=3V Pin=C12-2
+Added Pin To Net: NetName=3V Pin=C13-2
+Added Pin To Net: NetName=3V Pin=C14-2
+Added Pin To Net: NetName=3V Pin=C15-2
+Added Pin To Net: NetName=3V Pin=C16-2
+Added Pin To Net: NetName=3V Pin=L1-1
+Added Pin To Net: NetName=3V Pin=P2-22
+Added Pin To Net: NetName=3V Pin=R3-2
+Added Pin To Net: NetName=3V Pin=R4-2
+Added Pin To Net: NetName=3V Pin=R5-2
+Added Pin To Net: NetName=3V Pin=R7-2
+Added Pin To Net: NetName=3V Pin=R10-1
+Added Pin To Net: NetName=3V Pin=R46-1
+Added Pin To Net: NetName=3V Pin=R47-1
+Added Pin To Net: NetName=3V Pin=U1-11
+Added Pin To Net: NetName=3V Pin=U1-19
+Added Pin To Net: NetName=3V Pin=U1-28
+Added Pin To Net: NetName=3V Pin=U1-50
+Added Pin To Net: NetName=3V Pin=U1-75
+Added Pin To Net: NetName=3V Pin=U1-100
+Change Net Name : Old Net Name=VDDA New Net Name=3VA

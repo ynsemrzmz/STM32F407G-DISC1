@@ -1,0 +1,18 @@
+Change Net Name : Old Net Name=NetCN3_2 New Net Name=USB_DC_N
+Change Net Name : Old Net Name=NetCN3_3 New Net Name=USB_DC_P
+Change Net Name : Old Net Name=NetR17_1 New Net Name=PA8
+Change Net Name : Old Net Name=PA11 New Net Name=USB_OTG_MCU_N
+Change Net Name : Old Net Name=PA12 New Net Name=USB_OTG_MCU_P
+Change Net Name : Old Net Name=USB_DM New Net Name=USB_D_N
+Change Net Name : Old Net Name=USB_DP New Net Name=USB_D_P
+Added Class: Name=USB_2.0_CONN
+Added Class: Name=USB_2.0
+Added Differential Pair: Name=USB_DC
+Added Differential Pair: Name=USB_D
+Added Differential Pair: Name=USB_OTG_MCU
+Added Room: Name=Main
+Added Room: Name=U_AUDIO
+Added Room: Name=U_MCU
+Added Room: Name=U_PERIPHERALS
+Added Room: Name=U_ST_LINK_SWD
+Added Room: Name=U_USB_OTG_FS

@@ -1,0 +1,86 @@
+Protel Design System Design Rule Check
+PCB File : C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc
+Date     : 9.09.2022
+Time     : 15:46:36
+
+WARNING: Zero hole size multi-layer pad(s) detected
+   Pad CN5-0(25.688mm,2.87mm) on Multi-Layer on Net GND
+   Pad CN5-0(23.438mm,2.87mm) on Multi-Layer on Net GND
+   Pad CN5-0(21.438mm,2.87mm) on Multi-Layer on Net GND
+   Pad CN5-0(19.188mm,2.87mm) on Multi-Layer on Net GND
+
+WARNING: Multilayer Pads with 0 size Hole found
+   Pad CN5-0(25.688mm,2.87mm) on Multi-Layer
+   Pad CN5-0(23.438mm,2.87mm) on Multi-Layer
+   Pad CN5-0(21.438mm,2.87mm) on Multi-Layer
+   Pad CN5-0(19.188mm,2.87mm) on Multi-Layer
+
+Processing Rule : Clearance Constraint (Gap=0.01mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+Rule Violations :0
+
+Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.08mm) (Max=1.016mm) (Preferred=0.254mm) (All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Direct Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=0.15mm) (Max=6.5mm) (All)
+Rule Violations :0
+
+Processing Rule : Hole To Hole Clearance (Gap=0.3mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=0.01mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Silk To Solder Mask (Clearance=0.01mm) (IsPad),(All)
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.01mm) Between Pad B1-1(23.584mm,29.366mm) on Top Layer And Track (22.873mm,30.103mm)(22.873mm,32.973mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.01mm) Between Pad B2-1(41.416mm,33.862mm) on Top Layer And Track (42.127mm,30.255mm)(42.127mm,33.125mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.01mm) Between Pad CN3-0(30.033mm,85.577mm) on Top Layer And Track (31.023mm,86.873mm)(31.023mm,89.591mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.01mm) Between Pad CN3-0(30.033mm,85.577mm) on Top Layer And Track (31.049mm,86.873mm)(37.627mm,86.873mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.01mm) Between Pad CN3-0(38.567mm,85.577mm) on Top Layer And Track (31.049mm,86.873mm)(37.627mm,86.873mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.01mm) Between Pad CN3-0(38.567mm,85.577mm) on Top Layer And Track (37.627mm,86.898mm)(37.627mm,89.616mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.01mm) Between Pad CN5-0(25.688mm,2.87mm) on Multi-Layer And Track (26.476mm,0.338mm)(26.476mm,5.723mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.01mm) Between Pad LD1-1(22.76mm,84.749mm) on Top Layer And Track (21.973mm,84.393mm)(25.046mm,84.393mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.01mm) Between Pad LD1-1(22.76mm,84.749mm) on Top Layer And Track (21.973mm,85.13mm)(22.684mm,84.393mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.01mm) Between Pad LD1-2(22.76mm,87.749mm) on Top Layer And Track (21.973mm,88.076mm)(25.046mm,88.076mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.01mm) Between Pad LD1-3(24.26mm,87.749mm) on Top Layer And Track (21.973mm,88.076mm)(25.046mm,88.076mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.01mm) Between Pad LD1-4(24.26mm,84.749mm) on Top Layer And Track (21.973mm,84.393mm)(25.046mm,84.393mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
+Rule Violations :12
+
+Processing Rule : Silk to Silk (Clearance=0.102mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Net Antennae (Tolerance=0mm) (All)
+Rule Violations :0
+
+Processing Rule : Matched Lengths(Tolerance=25.4mm) (InDifferentialPair ('USB_D'))
+Rule Violations :0
+
+Processing Rule : Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)
+Rule Violations :0
+
+Waived Violations Of Rule : Un-Routed Net Constraint ( (All) )
+   Waived Violation between Isolated copper: Split Plane  (2V5) on PWR. Copper island connected to pads/vias detected. Copper area is : 12.271 sq. mmWaived by a at 9.09.2022 15:46:24a
+   Waived Violation between Isolated copper: Split Plane  (2V5) on PWR. Dead copper detected. Copper area is : 0.128 sq. mmWaived by a at 9.09.2022 15:46:24a
+   Waived Violation between Isolated copper: Split Plane  (2V5) on PWR. Dead copper detected. Copper area is : 0.128 sq. mmWaived by a at 9.09.2022 15:46:24a
+   Waived Violation between Isolated copper: Split Plane  (2V5) on PWR. Dead copper detected. Copper area is : 0.128 sq. mmWaived by a at 9.09.2022 15:46:24a
+   Waived Violation between Isolated copper: Split Plane  (2V5) on PWR. Dead copper detected. Copper area is : 0.128 sq. mmWaived by a at 9.09.2022 15:46:24a
+   Waived Violation between Isolated copper: Split Plane  (2V5) on PWR. Dead copper detected. Copper area is : 0.128 sq. mmWaived by a at 9.09.2022 15:46:24a
+   Waived Violation between Isolated copper: Split Plane  (2V5) on PWR. Dead copper detected. Copper area is : 0.128 sq. mmWaived by a at 9.09.2022 15:46:24a
+   Waived Violation between Isolated copper: Split Plane  (2V5) on PWR. Dead copper detected. Copper area is : 0.745 sq. mmWaived by a at 9.09.2022 15:46:24a
+Waived Violations :8
+
+
+Violations Detected : 12
+Waived Violations : 8
+Time Elapsed        : 00:00:01

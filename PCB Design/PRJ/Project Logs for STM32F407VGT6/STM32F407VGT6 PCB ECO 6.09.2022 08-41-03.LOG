@@ -1,0 +1,29 @@
+Removed Pin From Net: NetName=NetCN2_1 Pin=SB11-1
+Removed Pin From Net: NetName=NetCN2_1 Pin=SB12-2
+Removed Pin From Net: NetName=NetCN2_2 Pin=SB13-1
+Removed Pin From Net: NetName=NetCN2_2 Pin=SB14-2
+Removed Pin From Net: NetName=NetCN2_4 Pin=SB17-1
+Removed Pin From Net: NetName=NetCN2_4 Pin=SB18-2
+Removed Member From Class: ClassName=USB_2.0_CONN Member=AIN_1
+Removed Member From Class: ClassName=USB_2.0_CONN Member=GND
+Removed Member From Class: ClassName=USB_OTG_CONN Member=GND
+Removed Member From Class: ClassName=USB_2.0_CONN Member=NetCN1_1
+Removed Member From Class: ClassName=USB_2.0_CONN Member=NetCN1_2
+Removed Member From Class: ClassName=USB_2.0_CONN Member=NetCN1_4
+Removed Member From Class: ClassName=USB_2.0_CONN Member=NetCN1_5
+Removed Member From Class: ClassName=USB_2.0_CONN Member=NetCN1_6
+Removed Member From Class: ClassName=USB_2.0_CONN Member=NetD1_2
+Removed Member From Class: ClassName=USB_2.0_CONN Member=T_JTCK
+Removed Member From Class: ClassName=USB_2.0_CONN Member=T_JTMS
+Removed Member From Class: ClassName=USB_2.0_CONN Member=T_NRST
+Removed Member From Class: ClassName=USB_2.0_CONN Member=T_SWO
+Added Pin To Net: NetName=NetCN2_4 Pin=SB11-1
+Added Pin To Net: NetName=NetCN2_4 Pin=SB12-2
+Added Pin To Net: NetName=NetCN2_1 Pin=SB13-1
+Added Pin To Net: NetName=NetCN2_1 Pin=SB14-2
+Added Pin To Net: NetName=NetCN2_2 Pin=SB17-1
+Added Pin To Net: NetName=NetCN2_2 Pin=SB18-2
+Added Member To Class: ClassName=USB_2.0_CONN Member=Wire USB_D_N
+Added Member To Class: ClassName=USB_2.0_CONN Member=Wire USB_D_P
+Added Member To Class: ClassName=USB_2.0_CONN Member=Wire USB_DC_N
+Added Member To Class: ClassName=USB_2.0_CONN Member=Wire USB_DC_P

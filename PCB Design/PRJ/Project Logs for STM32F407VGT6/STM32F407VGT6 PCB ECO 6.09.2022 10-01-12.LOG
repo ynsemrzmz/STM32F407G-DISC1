@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=T_JTMS Pin=SB11-2
+Removed Pin From Net: NetName=T_SWO Pin=SB15-2
+Added Pin To Net: NetName=T_JTCK Pin=SB11-2
+Added Pin To Net: NetName=T_JTMS Pin=SB15-2

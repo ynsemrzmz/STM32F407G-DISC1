@@ -1,0 +1,453 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 8em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD20\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">9.09.2022</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">15:46:36</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:01</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc" class="file"><acronym title="C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc">C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">8</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">12</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Waived Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">8</td></tr>
+</table>
+</td>
+</table><a name="IDUAZZHTRAKHE5GEH1BTIKC2IQEIDNGENNVSJ1WJDB0XVLSXBVGU1F"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDNFGH1TORH32XDOZF25S11BO5TMXHGCQGHRFGJGJHXEYEOCPPTEUO">Zero hole size multi-layer pad(s) detected</a></td>
+<td class="column2">4</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID10YNPTHOUENHGZMJV4IOKOR0EN5J4BSXHPR1G4BPBG4D1IE3FECE">Multilayer Pads with 0 size Hole found</a></td>
+<td class="column2">4</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">8</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDTFJ5MRF5OUBGH10L21CLTZYJINTWULQRJNWCEVBFNA3VVP3HSJPH">Clearance Constraint (Gap=0.01mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDTW5KGFKIARFGCLKJPPBGVK5IHKC1STPVL5W3QGBSYUFMFKN3DKN">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDKMOFY2CU114WON4EZPLUWQWQKEZ4LQQ2S1L2TPKC24GRN5H5L5JB">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID101OXOK34C3GPKA0AENALO5CYGINFYWOHAE250EZXDKKFQNFKWRH">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDBNR4P5XZFAIDIIAIKKYIGJQD2KWZD5OBMV2EZ5DOYFHRFDTHMHNN">Width Constraint (Min=0.08mm) (Max=1.016mm) (Preferred=0.254mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDE5E4AOLTH3H3F1RCODQABJGHKI400RBJPUACHLYLFYMO0MM5UJ">Power Plane Connect Rule(Direct Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDNL4BKC3OA0IRIKUHF1VFUFZDQHOXNQYIQEENR5IIBX2THVX4QSSO">Hole Size Constraint (Min=0.15mm) (Max=6.5mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDQIKUAV2C4YMNBKGMKZ5NMHRFHHCIJDX30A30L0NBLEJE4QBIZ1HI">Hole To Hole Clearance (Gap=0.3mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDPNLKGKGYYY5CMKYV5IUQYXT4BSMYPRDENEW0VDUBPP0M2XN4B1F">Minimum Solder Mask Sliver (Gap=0.01mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDU3RSVXJX1CDBI2Y3330Q43JBJO4QQ4AVQ510BQHJ4OO0HGHC3SNG">Silk To Solder Mask (Clearance=0.01mm) (IsPad),(All)</a></td>
+<td class="column2">12</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDIPONIDCNPK1IOQTZFLD4XTT2XDWJJ3QCPE0T3UIMHXLR0Q1VJMSP">Silk to Silk (Clearance=0.102mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID4W2A4LDKJCHBKD5TXISGVESVWGGXAZIIHBXS2TKZTV1U42K1BZAL">Net Antennae (Tolerance=0mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDBVXJLGF2P5MBL2MTGR413ELLLO4GKAVASGQSI2CUXKJ0K0V2IRLN">Matched Lengths(Tolerance=25.4mm) (InDifferentialPair ('USB_D'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDCT4K3K2ES54ZNMG2HPQY4FFIRKKPGOGKSA0TQHJ4AODY1ZISYQIN">Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">12</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Waived Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDACNMAQFYHBN0FCRQ44HHPQO3LBS1EX1T4V1CBYHPBSBX331IKLWG">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">8</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">8</td>
+</tr>
+</table><br><a name="ID4KW4RZGA2SB2BOHAX5HN3WFMXPF550UV21QPJDLBVLETAHFY1LXC"><h2>Warnings</h2></a><a name="IDNFGH1TORH32XDOZF25S11BO5TMXHGCQGHRFGJGJHXEYEOCPPTEUO"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="warning">Zero hole size multi-layer pad(s) detected</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18253.386mil|Location2.X=18320.441mil|Location1.Y=8188.725mil|Location2.Y=8255.78mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18253.386mil|Location2.X=18320.441mil|Location1.Y=8188.725mil|Location2.Y=8255.78mil|Absolute=True">Pad CN5-0(25.688mm,2.87mm) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">Net GND</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18164.803mil|Location2.X=18231.858mil|Location1.Y=8188.725mil|Location2.Y=8255.78mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18164.803mil|Location2.X=18231.858mil|Location1.Y=8188.725mil|Location2.Y=8255.78mil|Absolute=True">Pad CN5-0(23.438mm,2.87mm) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">Net GND</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18086.063mil|Location2.X=18153.118mil|Location1.Y=8188.725mil|Location2.Y=8255.78mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18086.063mil|Location2.X=18153.118mil|Location1.Y=8188.725mil|Location2.Y=8255.78mil|Absolute=True">Pad CN5-0(21.438mm,2.87mm) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">Net GND</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=17997.48mil|Location2.X=18064.535mil|Location1.Y=8188.725mil|Location2.Y=8255.78mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=17997.48mil|Location2.X=18064.535mil|Location1.Y=8188.725mil|Location2.Y=8255.78mil|Absolute=True">Pad CN5-0(19.188mm,2.87mm) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">Net GND</acronym></a></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="ID10YNPTHOUENHGZMJV4IOKOR0EN5J4BSXHPR1G4BPBG4D1IE3FECE"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="warning">Multilayer Pads with 0 size Hole found</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18253.386mil|Location2.X=18320.441mil|Location1.Y=8188.725mil|Location2.Y=8255.78mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18253.386mil|Location2.X=18320.441mil|Location1.Y=8188.725mil|Location2.Y=8255.78mil|Absolute=True">Pad CN5-0(25.688mm,2.87mm) on Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18164.803mil|Location2.X=18231.858mil|Location1.Y=8188.725mil|Location2.Y=8255.78mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18164.803mil|Location2.X=18231.858mil|Location1.Y=8188.725mil|Location2.Y=8255.78mil|Absolute=True">Pad CN5-0(23.438mm,2.87mm) on Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18086.063mil|Location2.X=18153.118mil|Location1.Y=8188.725mil|Location2.Y=8255.78mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18086.063mil|Location2.X=18153.118mil|Location1.Y=8188.725mil|Location2.Y=8255.78mil|Absolute=True">Pad CN5-0(21.438mm,2.87mm) on Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=17997.48mil|Location2.X=18064.535mil|Location1.Y=8188.725mil|Location2.Y=8255.78mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=17997.48mil|Location2.X=18064.535mil|Location1.Y=8188.725mil|Location2.Y=8255.78mil|Absolute=True">Pad CN5-0(19.188mm,2.87mm) on Multi-Layer</acronym></a></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="ID2HKHAVBAAHBXPFXOX5UNJD54ZKBOGN4NGB0WEGGB42DQAVF3R4CO"><h2>Rule Violations</h2></a><a name="IDU3RSVXJX1CDBI2Y3330Q43JBJO4QQ4AVQ510BQHJ4OO0HGHC3SNG"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk To Solder Mask (Clearance=0.01mm) (IsPad),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18175.463mil|Location2.X=18176.726mil|Location1.Y=9292.329mil|Location2.Y=9293.592mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18175.463mil|Location2.X=18176.726mil|Location1.Y=9292.329mil|Location2.Y=9293.592mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.01mm) Between Pad B1-1(23.584mm,29.366mm) on Top Layer And Track (22.873mm,30.103mm)(22.873mm,32.973mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18933.51mil|Location2.X=18934.773mil|Location1.Y=9414.739mil|Location2.Y=9416.001mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18933.51mil|Location2.X=18934.773mil|Location1.Y=9414.739mil|Location2.Y=9416.001mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.01mm) Between Pad B2-1(41.416mm,33.862mm) on Top Layer And Track (42.127mm,30.255mm)(42.127mm,33.125mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18496.353mil|Location2.X=18497.615mil|Location1.Y=11527.022mil|Location2.Y=11528.285mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18496.353mil|Location2.X=18497.615mil|Location1.Y=11527.022mil|Location2.Y=11528.285mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.01mm) Between Pad CN3-0(30.033mm,85.577mm) on Top Layer And Track (31.023mm,86.873mm)(31.023mm,89.591mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18496.723mil|Location2.X=18497.985mil|Location1.Y=11527.022mil|Location2.Y=11528.285mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18496.723mil|Location2.X=18497.985mil|Location1.Y=11527.022mil|Location2.Y=11528.285mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.01mm) Between Pad CN3-0(30.033mm,85.577mm) on Top Layer And Track (31.049mm,86.873mm)(37.627mm,86.873mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18753.983mil|Location2.X=18755.245mil|Location1.Y=11527.022mil|Location2.Y=11528.285mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18753.983mil|Location2.X=18755.245mil|Location1.Y=11527.022mil|Location2.Y=11528.285mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.01mm) Between Pad CN3-0(38.567mm,85.577mm) on Top Layer And Track (31.049mm,86.873mm)(37.627mm,86.873mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18756.353mil|Location2.X=18757.615mil|Location1.Y=11527.022mil|Location2.Y=11528.285mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18756.353mil|Location2.X=18757.615mil|Location1.Y=11527.022mil|Location2.Y=11528.285mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.01mm) Between Pad CN3-0(38.567mm,85.577mm) on Top Layer And Track (37.627mm,86.898mm)(37.627mm,89.616mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18315.81mil|Location2.X=18317.072mil|Location1.Y=8192.093mil|Location2.Y=8193.356mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18315.81mil|Location2.X=18317.072mil|Location1.Y=8192.093mil|Location2.Y=8193.356mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.01mm) Between Pad CN5-0(25.688mm,2.87mm) on Multi-Layer And Track (26.476mm,0.338mm)(26.476mm,5.723mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18181.297mil|Location2.X=18182.559mil|Location1.Y=11431.188mil|Location2.Y=11432.45mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18181.297mil|Location2.X=18182.559mil|Location1.Y=11431.188mil|Location2.Y=11432.45mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.01mm) Between Pad LD1-1(22.76mm,84.749mm) on Top Layer And Track (21.973mm,84.393mm)(25.046mm,84.393mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18168.03mil|Location2.X=18169.292mil|Location1.Y=11431.188mil|Location2.Y=11432.45mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18168.03mil|Location2.X=18169.292mil|Location1.Y=11431.188mil|Location2.Y=11432.45mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.01mm) Between Pad LD1-1(22.76mm,84.749mm) on Top Layer And Track (21.973mm,85.13mm)(22.684mm,84.393mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18161.577mil|Location2.X=18162.84mil|Location1.Y=11576.188mil|Location2.Y=11577.45mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18161.577mil|Location2.X=18162.84mil|Location1.Y=11576.188mil|Location2.Y=11577.45mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.01mm) Between Pad LD1-2(22.76mm,87.749mm) on Top Layer And Track (21.973mm,88.076mm)(25.046mm,88.076mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18220.632mil|Location2.X=18221.895mil|Location1.Y=11576.188mil|Location2.Y=11577.45mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18220.632mil|Location2.X=18221.895mil|Location1.Y=11576.188mil|Location2.Y=11577.45mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.01mm) Between Pad LD1-3(24.26mm,87.749mm) on Top Layer And Track (21.973mm,88.076mm)(25.046mm,88.076mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18240.352mil|Location2.X=18241.614mil|Location1.Y=11431.188mil|Location2.Y=11432.45mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18240.352mil|Location2.X=18241.614mil|Location1.Y=11431.188mil|Location2.Y=11432.45mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.01mm) Between Pad LD1-4(24.26mm,84.749mm) on Top Layer And Track (21.973mm,84.393mm)(25.046mm,84.393mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDZP522FKLXNONFWDKW2SFUDG54FQKHWUUNSIKF1130TV0VDPPTHL"><h2>Waived Violations</h2></a><a name="IDACNMAQFYHBN0FCRQ44HHPQO3LBS1EX1T4V1CBYHPBSBX331IKLWG"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="waived">Un-Routed Net Constraint ( (All) )</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18389.689mil|Location2.X=18570.434mil|Location1.Y=8745.35mil|Location2.Y=8882.154mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18389.689mil|Location2.X=18570.434mil|Location1.Y=8745.35mil|Location2.Y=8882.154mil|Absolute=True">Isolated copper: Split Plane  (2V5) on PWR. Copper island connected to pads/vias detected. Copper area is : 12.271 sq. mm</acronym></a><br>Waived by a at 9.09.2022 15:46:24<br>a</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18634.29mil|Location2.X=18657.048mil|Location1.Y=8752.4mil|Location2.Y=8775.159mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18634.29mil|Location2.X=18657.048mil|Location1.Y=8752.4mil|Location2.Y=8775.159mil|Absolute=True">Isolated copper: Split Plane  (2V5) on PWR. Dead copper detected. Copper area is : 0.128 sq. mm</acronym></a><br>Waived by a at 9.09.2022 15:46:24<br>a</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18590.983mil|Location2.X=18613.741mil|Location1.Y=8795.707mil|Location2.Y=8818.466mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18590.983mil|Location2.X=18613.741mil|Location1.Y=8795.707mil|Location2.Y=8818.466mil|Absolute=True">Isolated copper: Split Plane  (2V5) on PWR. Dead copper detected. Copper area is : 0.128 sq. mm</acronym></a><br>Waived by a at 9.09.2022 15:46:24<br>a</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18590.983mil|Location2.X=18613.741mil|Location1.Y=8752.4mil|Location2.Y=8775.159mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18590.983mil|Location2.X=18613.741mil|Location1.Y=8752.4mil|Location2.Y=8775.159mil|Absolute=True">Isolated copper: Split Plane  (2V5) on PWR. Dead copper detected. Copper area is : 0.128 sq. mm</acronym></a><br>Waived by a at 9.09.2022 15:46:24<br>a</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18590.983mil|Location2.X=18613.741mil|Location1.Y=8839.014mil|Location2.Y=8861.773mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18590.983mil|Location2.X=18613.741mil|Location1.Y=8839.014mil|Location2.Y=8861.773mil|Absolute=True">Isolated copper: Split Plane  (2V5) on PWR. Dead copper detected. Copper area is : 0.128 sq. mm</acronym></a><br>Waived by a at 9.09.2022 15:46:24<br>a</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18634.29mil|Location2.X=18657.049mil|Location1.Y=8795.707mil|Location2.Y=8818.466mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18634.29mil|Location2.X=18657.049mil|Location1.Y=8795.707mil|Location2.Y=8818.466mil|Absolute=True">Isolated copper: Split Plane  (2V5) on PWR. Dead copper detected. Copper area is : 0.128 sq. mm</acronym></a><br>Waived by a at 9.09.2022 15:46:24<br>a</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18634.29mil|Location2.X=18657.049mil|Location1.Y=8839.014mil|Location2.Y=8861.773mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18634.29mil|Location2.X=18657.049mil|Location1.Y=8839.014mil|Location2.Y=8861.773mil|Absolute=True">Isolated copper: Split Plane  (2V5) on PWR. Dead copper detected. Copper area is : 0.128 sq. mm</acronym></a><br>Waived by a at 9.09.2022 15:46:24<br>a</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18677.597mil|Location2.X=18709.171mil|Location1.Y=8745.35mil|Location2.Y=8861.773mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\STM32F407G-DISC1\PCB Design\PCB\STM32F407VGT6.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18677.597mil|Location2.X=18709.171mil|Location1.Y=8745.35mil|Location2.Y=8861.773mil|Absolute=True">Isolated copper: Split Plane  (2V5) on PWR. Dead copper detected. Copper area is : 0.745 sq. mm</acronym></a><br>Waived by a at 9.09.2022 15:46:24<br>a</td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

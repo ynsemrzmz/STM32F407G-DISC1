@@ -1,0 +1,7 @@
+Change Component Footprint: Designator=U8 Old Footprint=S5 New Footprint=TSOT-23-5
+Added Room: Name=Main
+Added Room: Name=U_AUDIO
+Added Room: Name=U_MCU
+Added Room: Name=U_PERIPHERALS
+Added Room: Name=U_ST_LINK_SWD
+Added Room: Name=U_USB_OTG_FS

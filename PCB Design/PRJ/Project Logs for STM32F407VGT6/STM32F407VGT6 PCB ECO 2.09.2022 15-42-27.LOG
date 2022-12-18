@@ -1,0 +1,10 @@
+Change Net Name : Old Net Name=NetCN5_2 New Net Name=USB_OTG_CONN_N
+Change Net Name : Old Net Name=NetCN5_3 New Net Name=USB_OTG_CONN_P
+Added Class: Name=USB_OTG_CONN
+Added Differential Pair: Name=USB_OTG_CONN
+Added Room: Name=Main
+Added Room: Name=U_AUDIO
+Added Room: Name=U_MCU
+Added Room: Name=U_PERIPHERALS
+Added Room: Name=U_ST_LINK_SWD
+Added Room: Name=U_USB_OTG_FS
