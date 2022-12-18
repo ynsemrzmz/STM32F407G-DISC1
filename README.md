@@ -7,3 +7,11 @@ This is 4 layer PCB which consist of STM32F407G microcontroller, STM32F103C8T de
 LIS302DLTR gyro sensor.
 
 
+
+
+![3d](https://user-images.githubusercontent.com/59617257/208313856-2ea8d242-c34b-4a8b-a2c1-4e01ee96270d.png)
+
+
+![2d](https://user-images.githubusercontent.com/59617257/208313872-8713b342-6a2c-4acc-8011-def571cab39a.png)
+
+
